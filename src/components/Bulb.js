@@ -4,7 +4,7 @@ export default function Bulb({ lampara,test,props }) {
   
   return (
   <div>
-    <h1>{valor}</h1>
+    <h1>{props.valor}</h1>
     <h1>{test}</h1>
       {lampara ?
         (<span>
