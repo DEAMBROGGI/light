@@ -25,7 +25,8 @@ export default class Lamp extends React.Component {
   render() {
     return (
       <div>
-        <Bulb lampara={this.state.isTurnedOn} test={this.state.test} props={this.props} />
+        <Bulb lampara={this.state.isTurnedOn} />
+        <Bulb lampara={!this.state.isTurnedOn} />
         <p>The lamp is <b>{this.state.isTurnedOn ? 'on' : 'off'}</b></p>
         <button onClick={this.switchLight}>switch</button>
       </div>

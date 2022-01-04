@@ -1,11 +1,10 @@
 import React from 'react'
 
-export default function Bulb({ lampara,test, props }) {
-  console.log(props)
+export default function Bulb({ lampara,test}) {
+  
   return (
   <div>
-    <h1>{props.valor}</h1>
-    <h1>{test}</h1>
+    
       {lampara ?
         (<span>
           <img src={'https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Light_bulb.png'} width={50} />
