@@ -1,24 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import Lamp from './components/Lamp'
+import Bulb from './components/Bulb'
 
-function App() {
+const App = () =>{
+  let valor = 300
+  let texto ="texto"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Lamp valor={valor} texto={texto}/>
+
   );
 }
 
