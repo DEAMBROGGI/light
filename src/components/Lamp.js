@@ -17,6 +17,7 @@ export default class Lamp extends React.Component {
       isTurnedOn : !this.state.isTurnedOn,
       test:"La cambie al hacer click"
       
+      
     })
 
   }
@@ -24,7 +25,7 @@ export default class Lamp extends React.Component {
   render() {
     return (
       <div>
-        <Bulb lampara={this.state.isTurnedOn} test={this.state.test} valor={this.props} />
+        <Bulb lampara={this.state.isTurnedOn} test={this.state.test} props={this.props} />
         <p>The lamp is <b>{this.state.isTurnedOn ? 'on' : 'off'}</b></p>
         <button onClick={this.switchLight}>switch</button>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Bulb({ lampara,test,props }) {
-  
+export default function Bulb({ lampara,test, props }) {
+  console.log(props)
   return (
   <div>
     <h1>{props.valor}</h1>
