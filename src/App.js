@@ -1,15 +1,15 @@
-import React from 'react'
-import Lamp from './components/Lamp'
-import Bulb from './components/Bulb'
-import Texto from './components/Texto'
+import React from 'react' //IMPORTO PAQUETES DE REACT
+import Lamp from './components/Lamp' //IMPORTO COMPONENTE Lamp
 
-const App = () =>{
-  const [valor,setValor] = React.useState(300)
-  const [texto, setTexto] = React.useState('')
-  
-  const addValor=()=>{
+import Texto from './components/Texto' //IMPORTO COMPONENTE Texto
 
-    setValor(valor+1)
+const App = () =>{   //CREO COMPONENTE FUNCIONAL APP
+  const [valor,setValor] = React.useState(300) //USO HOOK useState para poder cambiar valor de const valor
+  const [texto, setTexto] = React.useState('') //USO HOOK useState para poder cambiar valor de const texto
+
+  const addValor=()=>{ //CREO FUNCION addValor
+
+    setValor(valor+1) //CAMBIO VALOR de const valor, A SU VALOR ACTUAL LE AUMENTO 1
 
   }
 
@@ -17,7 +17,7 @@ const App = () =>{
   
   return (
     <>
-    <Texto valor={valor} texto={texto}/>
+    <Texto valor={valor} texto={texto}/> {/*LLAMO A COMPONENTE IMPORTADO Texto y le paso como props valor y texto*/}
     <Lamp />
     <button onClick={addValor}>AGREGAR VALOR</button>
     <button onClick={()=>setValor(valor-1)}>RESTAR VALOR</button>
