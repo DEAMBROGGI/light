@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Bulb({ lampara,test}) {
+ function Bulb({ lampara}) {
   
   return (
   <div>
@@ -17,3 +17,4 @@ export default function Bulb({ lampara,test}) {
   
   
 }
+export default Bulb;
