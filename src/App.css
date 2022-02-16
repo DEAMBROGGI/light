@@ -1,9 +1,11 @@
-.App {
-  text-align: center;
+
+.NavBar {
+  background-color: red !important;
+}
+.cards{
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
