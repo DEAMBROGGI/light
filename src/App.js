@@ -4,6 +4,8 @@ import "./App.css"
 import NavBar from './components/NavBar'
 import CardDinamic from './components/Card'
 import Carrousel from './components/Carrousel'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import CardDetalle from './components/detalle'
 
 
  const App = () => { //CREO COMPONENTE FUNCIONAL APP
@@ -11,15 +13,22 @@ import Carrousel from './components/Carrousel'
 
 
    return(
+    
+    <BrowserRouter>
     <div className="App">
      <NavBar/>
-     <h1>Generacion de Carrousel</h1>
-    <Carrousel/>
-     <h1>Generacion de Cards</h1>
-     <CardDinamic/>
-    {/*<Lamp />*/}
-   
+     <Routes>
+     
+    <Route path="/carrousel" element={<Carrousel/>}/> 
+    <Route path='/cards' element={<CardDinamic/>}/>
+    <Route path="/lamp" element={<Lamp/>}/>
+    <Route path="*" element={<Carrousel/>}/>
+    <Route path ="/cards/detalle/:id" element={<CardDetalle/>}/>
+    
+    </Routes>
     </div>
+    </BrowserRouter>
+    
   );
    }
 

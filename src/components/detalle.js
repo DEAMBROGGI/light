@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React, {useState} from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -15,7 +15,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import datos from './datos';
-import {Link as LinkRouter} from "react-router-dom"
+import {useParams} from 'react-router-dom'
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,8 +29,11 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CardDinamic() {
-    console.log(datos)
+export default function CardDetalle() {
+const {id} = useParams()
+const card = datos.filter(dato=> dato.id == id)
+
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -39,7 +43,7 @@ export default function CardDinamic() {
   return (
 
     <div className="cards">
-        {datos.map(evento=>
+        {card?.map(evento=>
     <Card sx={{ maxWidth: 345, margin:3 }}>
       <CardHeader
         avatar={
@@ -68,13 +72,9 @@ export default function CardDinamic() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-
-        <LinkRouter to={`detalle/${evento.id}`}>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        </LinkRouter>
-        
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>

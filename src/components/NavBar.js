@@ -2,31 +2,114 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import {Link as LinkRouter} from "react-router-dom"
 
-export default function NavBar() {
+const pages = ['Products', 'Pricing', 'Blog'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+const NavBar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  
+
   return (
-    <Box sx={{ flexGrow: 1  }}>
-      <AppBar position="static" className="NavBar">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+    <AppBar position="static" className='NavBar'>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            LOGO
           </Typography>
-          <Button color="inherit">Login</Button>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+
+              <MenuItem>
+                <LinkRouter to="carrousel" className='linkresp'> Carrousel </LinkRouter>
+              </MenuItem>
+              <MenuItem>
+                <LinkRouter to="cards" className='linkresp'>Cards</LinkRouter>
+              </MenuItem>
+              <MenuItem>
+                <LinkRouter to="lamp" className='linkresp'>Lamp</LinkRouter>
+              </MenuItem>
+
+            </Menu>
+          </Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+          >
+            LOGO
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            
+          <LinkRouter to="carrousel" className='link'>
+          <Button color="inherit">Carrousel</Button>
+          </LinkRouter>
+          <LinkRouter to="cards"  className='link'>
+          <Button color="inherit">Cards</Button>
+          </LinkRouter>
+
+          <LinkRouter to="lamp"  className='link'>
+            <Button color="inherit">Lamp</Button>
+          </LinkRouter>
+          
+          </Box>
+
+       
         </Toolbar>
-      </AppBar>
-    </Box>
+      </Container>
+    </AppBar>
   );
-}
+};
+export default NavBar;
