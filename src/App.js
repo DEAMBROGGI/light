@@ -6,6 +6,7 @@ import CardDinamic from './components/Card'
 import Carrousel from './components/Carrousel'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CardDetalle from './components/detalle'
+import Gallery from './components/carrouceldos'
 
 
  const App = () => { //CREO COMPONENTE FUNCIONAL APP
@@ -24,7 +25,7 @@ import CardDetalle from './components/detalle'
     <Route path="/lamp" element={<Lamp/>}/>
     <Route path="*" element={<Carrousel/>}/>
     <Route path ="/cards/detalle/:id" element={<CardDetalle/>}/>
-    
+    <Route path ="/gallery" element={<Gallery/>}/>
     </Routes>
     </div>
     </BrowserRouter>
