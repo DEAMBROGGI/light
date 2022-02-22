@@ -2,6 +2,8 @@ import React from 'react'
 import Carousel from 'react-grid-carousel'
 
  const Gallery = () => {
+
+
   return (
       <div className='gallery'>
     <Carousel cols={3} rows={2} gap={10} loop
@@ -25,6 +27,7 @@ import Carousel from 'react-grid-carousel'
       >
       <Carousel.Item>
         <img width="100%" src="https://picsum.photos/800/600?random=1" />
+        <h1 style={{position:"absolute", bottom:1}}>Nombre de foto</h1>
       </Carousel.Item>
       <Carousel.Item>
         <img width="100%" src="https://picsum.photos/800/600?random=2" />

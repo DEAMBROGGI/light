@@ -9,7 +9,8 @@ export default class Lamp extends React.Component {
     this.state = {
       isTurnedOn : false,
       click: 0,
-      number: 103
+      number: 1000,
+      apidata:[]
     }
 
   }

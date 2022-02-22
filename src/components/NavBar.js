@@ -80,6 +80,18 @@ const NavBar = () => {
               <MenuItem>
                 <LinkRouter to="lamp" className='linkresp'>Lamp</LinkRouter>
               </MenuItem>
+              <MenuItem>
+                <LinkRouter to="badclock" className='linkresp'>BadClock</LinkRouter>
+              </MenuItem>
+              <LinkRouter to="goodclock"  className='link'>
+            <Button color="inherit">GoodClock</Button>
+          </LinkRouter>
+          <LinkRouter to="derivedstate"  className='link'>
+            <Button color="inherit">DerivedState</Button>
+          </LinkRouter>
+          <LinkRouter to="apisearch"  className='link'>
+            <Button color="inherit">ApiSearch</Button>
+          </LinkRouter>
 
             </Menu>
           </Box>
@@ -103,6 +115,19 @@ const NavBar = () => {
           <LinkRouter to="lamp"  className='link'>
             <Button color="inherit">Lamp</Button>
           </LinkRouter>
+          <LinkRouter to="badclock"  className='link'>
+            <Button color="inherit">BadClock</Button>
+          </LinkRouter>
+          <LinkRouter to="goodclock"  className='link'>
+            <Button color="inherit">GoodClock</Button>
+          </LinkRouter>
+          <LinkRouter to="derivedState"  className='link'>
+            <Button color="inherit">DerivedState</Button>
+          </LinkRouter>
+          <LinkRouter to="apisearch"  className='link'>
+            <Button color="inherit">ApiSearch</Button>
+          </LinkRouter>
+
           
           </Box>
 
