@@ -2,10 +2,17 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 export default function ApiCall(props) {
-    console.log(props.apiInitial)
-    const [data, setData] = useState(props.apiInitial.data.results)
-    console.log(data)
+  
     
+    const [data, setData] = useState()
+    console.log(data)
+
+    useEffect(()=>{
+
+        axios.get(`https://rickandmortyapi.com/api/character/?page=1`)
+          .then(response=>setData(response.data.results))
+        
+        },[]) 
 
     useEffect(() => {
         axios.get(`https://rickandmortyapi.com/api/character/?name=${props.search}`)

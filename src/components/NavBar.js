@@ -92,6 +92,9 @@ const NavBar = () => {
           <LinkRouter to="apisearch"  className='link'>
             <Button color="inherit">ApiSearch</Button>
           </LinkRouter>
+          <LinkRouter to="frommyapi"  className='link'>
+            <Button color="inherit">FromMyApi</Button>
+          </LinkRouter>
 
             </Menu>
           </Box>
@@ -127,7 +130,9 @@ const NavBar = () => {
           <LinkRouter to="apisearch"  className='link'>
             <Button color="inherit">ApiSearch</Button>
           </LinkRouter>
-
+          <LinkRouter to="frommyapi"  className='link'>
+            <Button color="inherit">FromMyApi</Button>
+          </LinkRouter>
           
           </Box>
 

@@ -10,7 +10,8 @@ import Gallery from './components/carrouceldos'
 import BadClock from './components/BadClock'
 import GoodClock from './components/Goodclock'
 import DerivedState from './components/getDerivedStateFromProps'
-import ApiCall from './components/apiCall'
+import ApiCall from './components/RickandMorty'
+import FromMyApi from './components/Frommyapi'
 import axios from 'axios'
 import CardContainer from './components/cardsContainer'
 
@@ -21,18 +22,14 @@ const [input,setInput]=useState()
 const [apidata, setApiData ]= useState([])
 
 
-console.log(input)
 
 useEffect(()=>{
 
 axios.get(`https://rickandmortyapi.com/api/character/?page=1`)
   .then(response=>setApiData(response))
 
-  axios.get(`http://localhost:4000/api/V1/allcities`)
-  .then(respuesta=>console.log(respuesta.data.response.ciudades))
-
 },[]) 
-console.log(apidata)
+
 
    return(
     
@@ -53,8 +50,9 @@ console.log(apidata)
     <Route path ="/badclock" element={<BadClock/>}/>
     <Route path ="/goodclock" element={<GoodClock/>}/>
     <Route path ="/derivedstate" element={<DerivedState name={input}/>}/>
-    <Route path ="/apisearch" element={<ApiCall search={input} apiInitial ={apidata}/>}/>
+    <Route path ="/apisearch" element={<ApiCall search={input} />}/>
     <Route path ="/cardsestaticas" element={<CardContainer />}/>
+    <Route path ="/frommyapi" element={<FromMyApi />}/>
     </Routes>
     </div>
     
