@@ -28,6 +28,9 @@ useEffect(()=>{
 axios.get(`https://rickandmortyapi.com/api/character/?page=1`)
   .then(response=>setApiData(response))
 
+  axios.get(`http://localhost:4000/api/V1/allcities`)
+  .then(respuesta=>console.log(respuesta.data.response.ciudades))
+
 },[]) 
 console.log(apidata)
 
